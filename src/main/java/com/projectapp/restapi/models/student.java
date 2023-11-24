@@ -1,29 +1,14 @@
 package com.projectapp.restapi.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
-
-@Entity
 public class student {
-    @Id
-    @GeneratedValue
+
     private long Studentid;
-    @Column
     private String firstName;
-    @Column
     private String lastName;
-    @Column
     private String email;
-    @Column
     private String address;
-    @Column
     private String city;
-    @Column
     private String postal;
-    @Column
     private int phone;
 
     public long getStudentid() {
