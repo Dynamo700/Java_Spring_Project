@@ -27,6 +27,8 @@ public class student {
     private int phone;
     @jakarta.persistence.Id
     private Long id;
+//    @jakarta.persistence.Id
+//    private Long id;
 
     public long getStudentid() {
         return Studentid;
@@ -92,7 +94,6 @@ public class student {
         this.phone = phone;
     }
 
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -100,4 +101,13 @@ public class student {
     public Long getId() {
         return id;
     }
+
+
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public Long getId() {
+//        return id;
+//    }
 }

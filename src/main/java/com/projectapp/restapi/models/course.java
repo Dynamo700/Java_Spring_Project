@@ -1,13 +1,14 @@
 package com.projectapp.restapi.models;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import org.springframework.data.annotation.Id;
-
+@Entity
 public class course {
-    @Id
+    @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long courseId;
+    private Long courseId;
 
     @Column
     private String courseName;
@@ -15,6 +16,7 @@ public class course {
     private int courseNumber;
     @Column
     private int capacity;
+
 
     public long getCourseId() { return courseId; }
 
