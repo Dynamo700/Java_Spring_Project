@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 
 @Entity
 public class programs {
-    @Id
+    @jakarta.persistence.Id
     @GeneratedValue
     private long pid;
 

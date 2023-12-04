@@ -55,7 +55,7 @@ public class studentController {
     public String deleteStudent(@PathVariable long id){
         student deleteStudent = s_interface.findById(id).get();
         s_interface.delete(deleteStudent);
-        return "Deleted the course with id: "+id;
+        return "Deleted the student with id: "+id;
 
     }
 
