@@ -16,27 +16,27 @@ public class studentController {
     @Autowired
     private studentinterface s_interface;
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/api/cna/")
     public String getPage() {
         return "hello";
     }
 
-    @GetMapping(value = "/students")
+    @GetMapping(value = "/students/api/cna/")
     public List<student> GetStudent() {
         return s_interface.findAll();
     }
 
-    @PostMapping(value = "/student/add")
+    @PostMapping(value = "/student/add/api/cna/")
     public String addStudent(@RequestBody student student) {
         s_interface.save(student);
         return "Student saved!";
     }
 
-    @GetMapping(value = "/students/list")
+    @GetMapping(value = "/students/list/api/cna/")
     public List<student> GetStudentList() {
         return s_interface.findAll();
     }
-    @PutMapping(value = "students/update/{id}")
+    @PutMapping(value = "students/update/{id}/api/cna/")
     public String modifyStudent(@PathVariable long id, @RequestBody student student){
         student modifiedStudent = s_interface.findById(id).get();
         modifiedStudent.setStudentid(student.getStudentid());
@@ -51,7 +51,7 @@ public class studentController {
         return "Student updated!";
     }
 
-    @DeleteMapping(value = "students/delete/{id}")
+    @DeleteMapping(value = "students/delete/{id}/api/cna/")
     public String deleteStudent(@PathVariable long id){
         student deleteStudent = s_interface.findById(id).get();
         s_interface.delete(deleteStudent);
@@ -60,7 +60,7 @@ public class studentController {
     }
 
 
-    @GetMapping(value = "/students/{id}")
+    @GetMapping(value = "/students/{id}/api/cna/")
     public Optional<student> ViewStudent(@PathVariable long id){
         Optional<student> viewedStudent = s_interface.findById(id);
         return viewedStudent;

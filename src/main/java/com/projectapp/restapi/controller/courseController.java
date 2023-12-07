@@ -14,27 +14,27 @@ public class courseController {
     @Autowired
     private courseinterface c_interface;
 
-    @GetMapping(value = "/courses")
+    @GetMapping(value = "/courses/api/cna/")
     public List<course> GetCourse() {
         return c_interface.findAll();
     }
 
-    @PostMapping(value = "/courses/add")
+    @PostMapping(value = "/courses/add/api/cna/")
     public String addCourse(@RequestBody course course) {
         c_interface.save(course);
         return "Course saved!";
     }
 
-    @GetMapping(value = "/courses/list")
+    @GetMapping(value = "/courses/list/api/cna/")
     public List<course> GetCourseList() {
         return c_interface.findAll();
     }
-    @GetMapping(value = "/courses/{CourseId}")
+    @GetMapping(value = "/courses/{CourseId}/api/cna/")
     public Optional<course> ViewedCourse(@PathVariable long CourseId) {
         Optional<course> viewedCourse = c_interface.findById(CourseId);
         return viewedCourse;
     }
-    @PutMapping(value = "/courses/update/{CourseId}")
+    @PutMapping(value = "/courses/update/{CourseId}/api/cna/")
     public String modifyCourse(@PathVariable long CourseId, @RequestBody course course){
         course modifiedCourse = c_interface.findById(CourseId).get();
         modifiedCourse.setCourseId(course.getCourseId());
@@ -44,7 +44,7 @@ public class courseController {
         c_interface.save(modifiedCourse);
         return "Course updated!";
     }
-    @DeleteMapping(value = "/courses/delete/{CourseId}")
+    @DeleteMapping(value = "/courses/delete/{CourseId}/api/cna/")
     public String deleteCourse(@PathVariable long CourseId){
         course deleteCourse = c_interface.findById(CourseId).get();
         c_interface.delete(deleteCourse);

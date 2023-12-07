@@ -4,11 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-//gid (primary key, autoincrement)
-//• studentId (related to student records)
-//• courseId (related to course records)
-//• grade
-
 @Entity
 public class grades {
 
@@ -36,4 +31,8 @@ public class grades {
     public int getCourseId() { return courseId; }
 
     public void setCourseId(int courseId) { this.courseId = courseId; }
+
+    public int getGrade() { return grade; }
+
+    public void setGrade(int grade) { this.grade = grade; }
 }

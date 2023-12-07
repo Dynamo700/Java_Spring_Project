@@ -14,43 +14,44 @@ public class gradesController {
     @Autowired
     private gradesInterface g_interface;
 
-    @GetMapping(value = "/grades")
+    @GetMapping(value = "/grades/api/cna/")
     public List<grades> GetGrades() {
         return g_interface.findAll();
     }
 
-    @PostMapping(value = "/grades/add")
+    @PostMapping(value = "/grades/add/api/cna/")
     public String addGrades(@RequestBody grades grades) {
         g_interface.save(grades);
-        return "Student saved!";
+        return "Grades saved!";
     }
 
-    @GetMapping(value = "/grades/list")
+    @GetMapping(value = "/grades/list/api/cna/")
     public List<grades> GetGradesList() {
         return g_interface.findAll();
     }
-    @PutMapping(value = "grades/update/{id}")
-    public String modifyGrade(@PathVariable long id, @RequestBody grades grades){
-        grades modifiedGrades = g_interface.findById(id).get();
+    @PutMapping(value = "grades/update/{gid}/api/cna/")
+    public String modifyGrade(@PathVariable long gid, @RequestBody grades grades){
+        grades modifiedGrades = g_interface.findById(gid).get();
         modifiedGrades.setGid(grades.getGid());
         modifiedGrades.setCourseId(grades.getCourseId());
         modifiedGrades.setStudentId(grades.getStudentId());
+        modifiedGrades.setGrade(grades.getGrade());
         g_interface.save(modifiedGrades);
         return "Grades saved!";
     }
 
-    @DeleteMapping(value = "grades/delete/{id}")
-    public String deleteGrades(@PathVariable long id){
-        grades deleteGrades = g_interface.findById(id).get();
+    @DeleteMapping(value = "grades/delete/{gid}/api/cna/")
+    public String deleteGrades(@PathVariable long gid){
+        grades deleteGrades = g_interface.findById(gid).get();
         g_interface.delete(deleteGrades);
-        return "Deleted the grades with id: "+id;
+        return "Deleted the grades with id: "+gid;
 
     }
 
 
-    @GetMapping(value = "/grades/{id}")
-    public Optional<grades> ViewGrades(@PathVariable long id){
-        Optional<grades> viewedGrades = g_interface.findById(id);
+    @GetMapping(value = "/grades/{gid}/api/cna/")
+    public Optional<grades> ViewGrades(@PathVariable long gid){
+        Optional<grades> viewedGrades = g_interface.findById(gid);
         return viewedGrades;
 
 

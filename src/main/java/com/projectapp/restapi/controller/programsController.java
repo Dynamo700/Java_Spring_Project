@@ -14,43 +14,43 @@ public class programsController {
     @Autowired
     private programsInterface p_interface;
 
-    @GetMapping(value = "/programs")
+    @GetMapping(value = "/programs/api/cna/")
     public List<programs> GetPrograms() {
         return p_interface.findAll();
     }
 
-    @PostMapping(value = "/programs/add")
+    @PostMapping(value = "/programs/add/api/cna/")
     public String addProgram(@RequestBody programs programs) {
         p_interface.save(programs);
-        return "Student saved!";
+        return "Program saved!";
     }
 
-    @GetMapping(value = "/programs/list")
+    @GetMapping(value = "/programs/list/api/cna/")
     public List<programs> GetProgramsList() {
         return p_interface.findAll();
     }
-    @PutMapping(value = "programs/update/{id}")
-    public String modifyPrograms(@PathVariable long id, @RequestBody programs programs){
-        programs modifiedProgram = p_interface.findById(id).get();
+    @PutMapping(value = "programs/update/{pid}/api/cna/")
+    public String modifyPrograms(@PathVariable long pid, @RequestBody programs programs){
+        programs modifiedProgram = p_interface.findById(pid).get();
         modifiedProgram.setPid(programs.getPid());
         modifiedProgram.setProgramName(programs.getProgramName());
         modifiedProgram.setCampus(programs.getCampus());
         p_interface.save(modifiedProgram);
-        return "Student updated!";
+        return "Program updated!";
     }
 
-    @DeleteMapping(value = "Programs/delete/{id}")
-    public String deleteStudent(@PathVariable long id){
-        programs deletePrograms = p_interface.findById(id).get();
+    @DeleteMapping(value = "Programs/delete/{pid}/api/cna/")
+    public String deleteStudent(@PathVariable long pid){
+        programs deletePrograms = p_interface.findById(pid).get();
         p_interface.delete(deletePrograms);
-        return "Deleted the student with id: "+id;
+        return "Deleted the programs with id: "+pid;
 
     }
 
 
-    @GetMapping(value = "/programs/{id}")
-    public Optional<programs> ViewPrograms(@PathVariable long id){
-        Optional<programs> viewedPrograms = p_interface.findById(id);
+    @GetMapping(value = "/programs/{pid}/api/cna/")
+    public Optional<programs> ViewPrograms(@PathVariable long pid){
+        Optional<programs> viewedPrograms = p_interface.findById(pid);
         return viewedPrograms;
 
 
