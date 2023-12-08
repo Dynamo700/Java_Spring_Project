@@ -29,9 +29,9 @@ public class EnrollmentController {
         return e_interface.findAll();
     }
 
-    @PutMapping(value = "enrollment/update/{id}/api/cna/")
-    public String modifyEnrollment(@PathVariable long id, @RequestBody enrollment enrollment){
-        enrollment modifiedEnrollment = e_interface.findById(id).get();
+    @PutMapping(value = "/enrollment/update/{eid}/api/cna/")
+    public String modifyEnrollment(@PathVariable long eid, @RequestBody enrollment enrollment){
+        enrollment modifiedEnrollment = e_interface.findById(eid).get();
         modifiedEnrollment.setEid(enrollment.getEid());
         modifiedEnrollment.setCourseId(enrollment.getCourseId());
         modifiedEnrollment.setStudentId(enrollment.getStudentId());
@@ -39,11 +39,11 @@ public class EnrollmentController {
         return "Enrollment updated";
     }
 
-    @DeleteMapping(value = "enrollment/delete/{id}/api/cna/")
-    public String deleteEnrollment(@PathVariable long id){
-        enrollment deleteEnrollment = e_interface.findById(id).get();
+    @DeleteMapping(value = "/enrollment/delete/{eid}/api/cna/")
+    public String deleteEnrollment(@PathVariable long eid){
+        enrollment deleteEnrollment = e_interface.findById(eid).get();
         e_interface.delete(deleteEnrollment);
-        return "Deleted the enrollment with id: "+id;
+        return "Deleted the enrollment with id: "+eid;
     }
 
     @GetMapping(value = "/enrollment/{id}/api/cna/")

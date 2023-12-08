@@ -26,7 +26,7 @@ public class studentController {
         return s_interface.findAll();
     }
 
-    @PostMapping(value = "/student/add/api/cna/")
+    @PostMapping(value = "/students/add/api/cna/")
     public String addStudent(@RequestBody student student) {
         s_interface.save(student);
         return "Student saved!";
@@ -36,7 +36,7 @@ public class studentController {
     public List<student> GetStudentList() {
         return s_interface.findAll();
     }
-    @PutMapping(value = "students/update/{id}/api/cna/")
+    @PutMapping(value = "/students/update/{id}/api/cna/")
     public String modifyStudent(@PathVariable long id, @RequestBody student student){
         student modifiedStudent = s_interface.findById(id).get();
         modifiedStudent.setStudentid(student.getStudentid());
@@ -51,7 +51,7 @@ public class studentController {
         return "Student updated!";
     }
 
-    @DeleteMapping(value = "students/delete/{id}/api/cna/")
+    @DeleteMapping(value = "/students/delete/{id}/api/cna/")
     public String deleteStudent(@PathVariable long id){
         student deleteStudent = s_interface.findById(id).get();
         s_interface.delete(deleteStudent);

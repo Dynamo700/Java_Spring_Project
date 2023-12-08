@@ -29,7 +29,7 @@ public class gradesController {
     public List<grades> GetGradesList() {
         return g_interface.findAll();
     }
-    @PutMapping(value = "grades/update/{gid}/api/cna/")
+    @PutMapping(value = "/grades/update/{gid}/api/cna/")
     public String modifyGrade(@PathVariable long gid, @RequestBody grades grades){
         grades modifiedGrades = g_interface.findById(gid).get();
         modifiedGrades.setGid(grades.getGid());
@@ -40,7 +40,7 @@ public class gradesController {
         return "Grades saved!";
     }
 
-    @DeleteMapping(value = "grades/delete/{gid}/api/cna/")
+    @DeleteMapping(value = "/grades/delete/{gid}/api/cna/")
     public String deleteGrades(@PathVariable long gid){
         grades deleteGrades = g_interface.findById(gid).get();
         g_interface.delete(deleteGrades);

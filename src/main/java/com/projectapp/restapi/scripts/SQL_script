@@ -1,10 +1,10 @@
 INSERT INTO educationsystem.course (course_id, capacity, course_name, course_number) VALUES (4997, 29, 'American economics', 2247);
 INSERT INTO educationsystem.course (course_id, capacity, course_name, course_number) VALUES (6977, 25, 'Advanced Geology', 3098);
-INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (6, 600, '12 Wood Street', 'Toronto', 'Cole76@outlook.com', 'Cole', 'Brooks', 9727755, 'K8T7R6');
-INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (7, 721, '7 Wood Street', 'Toronto', 'Jane1000@gmail.com', 'Jane', 'Lee', 2278906, 'K1T1B2');
-INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (8, 872, '192 Ocean Lane', 'Calgary', 'Emma21@gmail.com', 'Emma', 'Scott', 1178282, 'A6V9Y5');
-INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (9, 901, '11 Selkirk Lane', 'Calgary', 'JaceA6@gmail.com', 'Jace', 'Abrams', 2278822, 'A8A3B0');
-INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (10, 120, '69 Percy’s Lane', 'Waterloo', 'Taylor5@gmail.com', 'Taylor', 'Morgan', 9825890, 'V5N2K1');
+INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (1, 6, '12 Wood Street', 'Toronto', 'Cole76@outlook.com', 'Cole', 'Brooks', 9727755, 'K8T7R6');
+INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (2, 7, '7 Wood Street', 'Toronto', 'Jane1000@gmail.com', 'Jane', 'Lee', 2278906, 'K1T1B2');
+INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (3, 8, '192 Ocean Lane', 'Calgary', 'Emma21@gmail.com', 'Emma', 'Scott', 1178282, 'A6V9Y5');
+INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (4, 9, '11 Selkirk Lane', 'Calgary', 'JaceA6@gmail.com', 'Jace', 'Abrams', 2278822, 'A8A3B0');
+INSERT INTO educationsystem.student (id, studentid, address, city, email, first_name, last_name, phone, postal) VALUES (5, 1, '69 Percy’s Lane', 'Waterloo', 'Taylor5@gmail.com', 'Taylor', 'Morgan', 9825890, 'V5N2K1');
 INSERT INTO educationsystem.grades (gid, course_id, grade, student_id) VALUES (728, 4997, 87, 600);
 INSERT INTO educationsystem.grades (gid, course_id, grade, student_id) VALUES (509, 4997, 75, 721);
 INSERT INTO educationsystem.grades (gid, course_id, grade, student_id) VALUES (711, 6977, 79, 600);

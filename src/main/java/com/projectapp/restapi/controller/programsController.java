@@ -29,7 +29,7 @@ public class programsController {
     public List<programs> GetProgramsList() {
         return p_interface.findAll();
     }
-    @PutMapping(value = "programs/update/{pid}/api/cna/")
+    @PutMapping(value = "/programs/update/{pid}/api/cna/")
     public String modifyPrograms(@PathVariable long pid, @RequestBody programs programs){
         programs modifiedProgram = p_interface.findById(pid).get();
         modifiedProgram.setPid(programs.getPid());
@@ -39,7 +39,7 @@ public class programsController {
         return "Program updated!";
     }
 
-    @DeleteMapping(value = "Programs/delete/{pid}/api/cna/")
+    @DeleteMapping(value = "/programs/delete/{pid}/api/cna/")
     public String deleteStudent(@PathVariable long pid){
         programs deletePrograms = p_interface.findById(pid).get();
         p_interface.delete(deletePrograms);
